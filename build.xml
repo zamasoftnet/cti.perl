@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="make">
+	<property name="version" value="2.1.3" />
+	<property name="aversion" value="2_1_3" />
+	<property name="archive" value="build/cti-perl-${aversion}" />
+	<property name="dirname" value="cti-perl-${version}" />
+	<property name="encoding" value="UTF-8" />
+	<property name="build.dir" location="build/perl" />
+	<property name="build.apidoc.dir" location="${build.dir}/apidoc" />
+	<property name="src.dir" location="src" />
+
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+	
+	<target name="release" depends="clean,make"/>
+	
+	<target name="dist" depends="release">
+		<zip destfile="${archive}.zip">
+		  	<zipfileset dir="${build.dir}" prefix="${dirname}"/>
+		</zip>
+		<tar tarfile="${archive}.tar">
+		  	<tarfileset dir="${build.dir}" prefix="${dirname}"/>
+		</tar>
+		<gzip zipfile="${archive}.tar.gz" src="${archive}.tar"/>
+	</target>
+	
+	<target name="make" depends="pod">
+		<filter token="version" value="${version}" />
+		<copy todir="${build.dir}" filtering="true" encoding="${encoding}">
+			<fileset dir="." includes="README.md"/>
+		</copy>
+		<copy todir="${build.dir}">
+			<fileset dir="src" includes="**" excludes="test/out"/>
+		</copy>
+	</target>
+	
+	<target name="pod">
+		<mkdir dir="${build.apidoc.dir}/CTI/Builder"/>
+		<mkdir dir="${build.apidoc.dir}/CTI/Results"/>
+		<copy file="index.html" todir="${build.apidoc.dir}"/>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/DriverManager.html">
+			<arg value="${src.dir}/code/CTI/DriverManager.pm"/>
+		</exec>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/Driver.html">
+			<arg value="${src.dir}/code/CTI/Driver.pm"/>
+		</exec>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/Session.html">
+			<arg value="${src.dir}/code/CTI/Session.pm"/>
+		</exec>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/Builder/FileBuilder.html">
+			<arg value="${src.dir}/code/CTI/Builder/FileBuilder.pm"/>
+		</exec>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/Builder/StreamBuilder.html">
+			<arg value="${src.dir}/code/CTI/Builder/StreamBuilder.pm"/>
+		</exec>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/Builder/NullBuilder.html">
+			<arg value="${src.dir}/code/CTI/Builder/NullBuilder.pm"/>
+		</exec>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/Results/SingleResult.html">
+			<arg value="${src.dir}/code/CTI/Results/SingleResult.pm"/>
+		</exec>
+		<exec executable="pod2html.bat" output="${build.apidoc.dir}/CTI/Results/DirectoryResults.html">
+			<arg value="${src.dir}/code/CTI/Results/DirectoryResults.pm"/>
+		</exec>
+	</target>
+	
+	<target name="rpm">
+		<buildnumber/>
+		<delete dir="build/work"/>
+		<filter token="version.number" value="${version}"/>
+		<filter token="aversion.number" value="${aversion}"/>
+		<filter token="build.number" value="${build.number}"/>
+		<mkdir dir="build/work/rpm/BUILD" />
+		<mkdir dir="build/work/rpm/RPMS" />
+		<mkdir dir="build/work/rpm/SOURCES" />
+		<mkdir dir="build/work/rpm/SPECS" />
+		<mkdir dir="build/work/rpm/SRPMS" />
+		<copy file="${spec}" filtering="true" tofile="build/work/rpm/SPECS/cti-perl.spec" />
+		<copy file="${archive}.tar.gz" todir="build/work/rpm/SOURCES" />
+		<rpm specfile="cti-perl.spec" topdir="build/work/rpm" command="-bb --target noarch" />
+		<copy todir="build">
+			<fileset dir="build/work/rpm/RPMS/noarch" includes="*" />
+		</copy>
+	</target>
+	
+	<target name="deb">
+		<antcall target="rpm">
+		  	<param name="spec" value="src/rpm/cti-perl.deb.spec" />
+		</antcall>
+		<exec dir="build" executable="fakeroot">
+			<arg value="alien" />
+			<arg value="-d" /><!-- .debパッケージへ -->
+			<arg value="-c" /><!-- 追加/削除スクリプトを含む -->
+			<arg value="cti-perl-${version}-0.noarch.rpm" />
+		</exec>
+		<delete file="build/cti-perl-${version}-0.noarch.rpm"/>
+	</target>
+	
+	<target name="redhat">
+		<antcall target="rpm">
+		  	<param name="spec" value="src/rpm/cti-perl.redhat.spec" />
+		</antcall>
+	</target>
+
+	<target name="test" depends="make">
+		<exec executable="prove">
+			<arg value="-r"/>
+			<arg value="-l"/>
+			<arg value="t"/>
+		</exec>
+	</target>
+	
+	<target name="package" depends="dist,deb,redhat"/>
+</project>
