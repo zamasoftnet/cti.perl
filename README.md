@@ -16,6 +16,20 @@ Copper PDF 文書変換サーバーに接続するためのPerlドライバで�
 
 ## インストール
 
+### cpanm を使う方法（推奨）
+
+```bash
+cpanm https://github.com/zamasoftnet/cti.perl/archive/refs/heads/main.tar.gz
+```
+
+インストール後は通常通りモジュールを使用できます。
+
+```perl
+use CTI::DriverManager;
+```
+
+### 手動インストール
+
 `src/code/CTI/` ディレクトリをプロジェクトにコピーし、Perlの `@INC` にパスを追加してください。
 
 ```perl
