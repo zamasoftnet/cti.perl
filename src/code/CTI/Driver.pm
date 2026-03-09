@@ -20,6 +20,7 @@ require Exporter;
 
 use strict;
 use IO::Socket;
+use Socket qw(IPPROTO_TCP TCP_NODELAY);
 
 =head1 CTI::Driver
 
@@ -98,6 +99,7 @@ sub get_session ($$;%) {
     my $protocol = getprotobyname('tcp');
     socket($fp, PF_INET, SOCK_STREAM, $protocol) or (warn('Socket error.') and return undef);
     connect($fp, $port_address) or (warn('Connection failure.') and return undef);
+    setsockopt($fp, IPPROTO_TCP, TCP_NODELAY, 1);
   }
 
   return new CTI::Session($fp, %opts);

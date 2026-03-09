@@ -29,7 +29,7 @@ use Symbol;
 パケットの送信に使うバッファのサイズです。
 
 =cut
-sub BUFFER_SIZE { return 1024; }
+sub BUFFER_SIZE { return 8192; }
 
 =head1 write_int
 
@@ -423,7 +423,7 @@ sub read (*$) {
     }
     my $data;
     my $read = sysread($fp, $data, $len);
-    defined($read) or return undef;
+    defined($read) && $read > 0 or return undef;
     $len -= $read;
     $result .= $data;
   }
