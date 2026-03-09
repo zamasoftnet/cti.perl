@@ -15,7 +15,7 @@ for my $file (glob('src/code/CTI.pm'),
 WriteMakefile(
     NAME             => 'CTI',
     AUTHOR           => 'Zamasoft <info@zamasoft.jp>',
-    VERSION          => '2.1.3',
+    VERSION          => '2.1.4',
     ABSTRACT         => 'CTI driver for Copper PDF server',
     LICENSE          => 'apache_2_0',
     MIN_PERL_VERSION => '5.006001',
