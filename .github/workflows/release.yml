@@ -13,21 +13,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Generate API docs
+        run: |
+          mkdir -p build/apidoc/CTI/Builder build/apidoc/CTI/Results
+          for pm in CTI/DriverManager CTI/Driver CTI/Session \
+                    CTI/Builder/FileBuilder CTI/Builder/StreamBuilder CTI/Builder/NullBuilder \
+                    CTI/Results/SingleResult CTI/Results/DirectoryResults; do
+            pod2html "src/code/${pm}.pm" > "build/apidoc/${pm}.html" 2>/dev/null || true
+          done
+
       - name: Create dist
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           DIRNAME="cti-perl-${VERSION}"
           STAGEDIR="build/${DIRNAME}"
-          mkdir -p "${STAGEDIR}/apidoc/CTI/Builder" "${STAGEDIR}/apidoc/CTI/Results"
-          # Copy apidoc index
-          cp index.html "${STAGEDIR}/apidoc/" 2>/dev/null || true
-          # Generate POD HTML docs
-          for pm in CTI/DriverManager CTI/Driver CTI/Session \
-                    CTI/Builder/FileBuilder CTI/Builder/StreamBuilder CTI/Builder/NullBuilder \
-                    CTI/Results/SingleResult CTI/Results/DirectoryResults; do
-            pod2html "src/code/${pm}.pm" > "${STAGEDIR}/apidoc/${pm}.html" 2>/dev/null || true
-          done
-          # Copy source files
+          mkdir -p "${STAGEDIR}"
+          cp -r build/apidoc "${STAGEDIR}/apidoc" 2>/dev/null || true
           cp -r src/. "${STAGEDIR}/"
           rm -rf "${STAGEDIR}/test/out"
           sed "s/@version@/${VERSION}/g" README.md > "${STAGEDIR}/README.md"
@@ -42,3 +43,9 @@ jobs:
           files: |
             build/cti-perl-*.zip
             build/cti-perl-*.tar.gz
+
+      - name: Deploy API docs to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/apidoc
