@@ -6,6 +6,10 @@ Copper PDF 文書変換サーバーに接続するためのPerlドライバで�
 
 - オンラインマニュアル: http://dl.cssj.jp/docs/copper/3.0/html/3421_ctip2_perl.html
 
+## API ドキュメント
+
+- **オンライン**: https://zamasoftnet.github.io/cti.perl/
+
 **バージョン:** 2.1.4
 
 ## 動作要件
