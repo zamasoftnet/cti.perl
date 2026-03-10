@@ -11,7 +11,7 @@ use File::Spec;
 use lib "$FindBin::Bin/../src/code";
 use CTI::DriverManager;
 
-my $uri = $ENV{CTI_SERVER_URI} || 'ctip://localhost:8099/';
+my $uri = $ENV{CTI_SERVER_URI} || 'ctip://cti.li/';
 my $host = $ENV{CTI_TEST_HOST};
 my $port = $ENV{CTI_TEST_PORT} || 8099;
 my $user = $ENV{CTI_TEST_USER} || 'user';
@@ -133,6 +133,18 @@ $session->end_main(*STDOUT);
 close $resolver_in;
 $session->close();
 ok($resolved, 'resolver が呼ばれてリソースを解決できる');
+
+$session = create_session();
+$session->property('output.pdf.version', '1.5');
+my $property_out = "$out_dir/perl-property.pdf";
+convert_html_with_resources($session, $property_out);
+$session->close();
+ok(-f $property_out, 'プロパティ設定後の変換結果が生成される');
+open(my $property_fp, '<', $property_out) or die "出力ファイルを開けません。";
+my $property_header = '';
+read($property_fp, $property_header, 4);
+close $property_fp;
+is($property_header, '%PDF', 'プロパティ設定PDF: ヘッダが正しい');
 
 $session = create_session();
 my $progress = 0;
