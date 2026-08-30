@@ -2,12 +2,13 @@
 use strict;
 use warnings;
 use CTI::DriverManager;
+use File::Path qw(make_path);
 
 my $SERVER_URI = 'ctip://cti.li/';
 my $SOURCE_URI = 'http://cti.li/';
-my $OUTPUT_DIR = '../test-output';
+my $OUTPUT_DIR = 'build/test-output';
 
-mkdir($OUTPUT_DIR) unless -d $OUTPUT_DIR;
+make_path($OUTPUT_DIR) unless -d $OUTPUT_DIR;
 
 sub with_session {
     my ($filename, $setup) = @_;
