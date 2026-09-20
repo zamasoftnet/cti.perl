@@ -17,7 +17,14 @@ my $port = $ENV{CTI_TEST_PORT} || 8099;
 my $user = $ENV{CTI_TEST_USER} || 'user';
 my $password = $ENV{CTI_TEST_PASSWORD} || 'kappa';
 
-if (!defined $host && $uri =~ m{^ctip://([^:/]+):?([0-9]+)?/?$}) {
+# 接続試験マトリクスの共通契約(copperpdf4/docs/design/2026-09-20-cti-driver-tls-test-matrix-design.md §2):
+# CTI_TLS_INSECURE=1 で証明書を検証しない(insecure => 1)、CTI_EXPECT_REJECT=1 で
+# 「証明書の検証で拒否されること」だけを試験する
+my $insecure = ($ENV{CTI_TLS_INSECURE} // '') eq '1';
+my $expect_reject = ($ENV{CTI_EXPECT_REJECT} // '') eq '1';
+die "CTI_TLS_INSECURE=1 と CTI_EXPECT_REJECT=1 は同時に指定できません
+" if $insecure && $expect_reject;
+if (!defined $host && $uri =~ m{^ctips?://([^:/]+):?([0-9]+)?/?$}) {
     $host = $1;
     $port = $2 if defined $2 && length($2) > 0;
 }
@@ -31,10 +38,27 @@ my $socket = IO::Socket::INET->new(
     Timeout  => 2,
 );
 if (!$socket) {
-    plan skip_all => "Copper PDFサーバー ($host:$port) に接続できません。";
-    exit;
+    # 到達不能は失敗(黙って skip_all にしない。2026-09-20、マトリクスの契約)
+    BAIL_OUT("Copper PDFサーバー ($host:$port) に接続できません。");
 }
 close $socket;
+
+if ($expect_reject) {
+    # 拒否試験(tls-reject / tls-badname): 接続を起こし、証明書の検証エラーで拒否されることだけを確かめる。
+    # ドライバは失敗を warn して undef を返す(2.1.5)ので、warn の文言を捕まえる
+    my $reason = '';
+    local $SIG{__WARN__} = sub { $reason .= $_[0] };
+    my $session = CTI::DriverManager::get_session($uri, user => $user, password => $password);
+    if ($session) {
+        $session->close();
+        fail('証明書の検証で拒否されなかった(接続できてしまった)');
+    } else {
+        print "CTI-MATRIX reject: $reason";
+        like($reason, qr/certificate verify failed|hostname verification/i, '証明書の検証で拒否される');
+    }
+    done_testing();
+    exit;
+}
 
 sub data_path {
     return File::Spec->catfile($FindBin::Bin, '..', 'src', 'test', 'data', @_);
@@ -45,7 +69,8 @@ sub create_session {
     return CTI::DriverManager::get_session(
         $uri,
         user      => ($options{user} // $user),
-        password  => ($options{password} // $password)
+        password  => ($options{password} // $password),
+        ($insecure ? (insecure => 1) : ())
     );
 }
 
