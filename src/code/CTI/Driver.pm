@@ -91,7 +91,21 @@ sub get_session ($$;%) {
   my $fp; 
   if ($ssl) {
     require IO::Socket::SSL;
-    $fp = new IO::Socket::SSL("$host:$port");
+    # IO::Socket::SSL は既定でサーバー証明書とホスト名を検証し、SNI を送る。
+    # 試験用の逃げ道: insecure => 1 で検証を省く(本番では使わない。相手が誰かを
+    # 確かめないまま話すことになる。Java --insecure / .NET ?insecure=1 /
+    # Node.js rejectUnauthorized:0 / Ruby 'insecure' に相当。2026-09-20)
+    my %ssl_opts = (PeerHost => $host, PeerPort => $port);
+    $ssl_opts{SSL_verify_mode} = IO::Socket::SSL::SSL_VERIFY_NONE()
+      if $opts{insecure} && $opts{insecure} ne '0' && lc($opts{insecure}) ne 'false';
+    $fp = IO::Socket::SSL->new(%ssl_opts);
+    # 失敗を黙って undef にしない。以前は new の戻り値を見ずに Session を作り、
+    # 証明書の検証に落ちても「Can't call method on an undefined value」で
+    # 後から落ちるだけだった(2026-09-20 に 3.2 の TLS 待受で実測)
+    unless ($fp) {
+      warn('TLS connection failure: ' . ($IO::Socket::SSL::SSL_ERROR || $!));
+      return undef;
+    }
   }
   else {
     my $address = inet_aton($host);

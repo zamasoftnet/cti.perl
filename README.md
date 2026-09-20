@@ -10,7 +10,7 @@ Copper PDF 文書変換サーバーに接続するためのPerlドライバで�
 
 - **オンライン**: https://zamasoftnet.github.io/cti.perl/
 
-**バージョン:** 2.1.4
+**バージョン:** 2.1.5
 
 ## 動作要件
 
@@ -76,6 +76,23 @@ $session->end_main(*STDOUT);
 # セッションの終了
 $session->close();
 ```
+
+## TLS で接続する (ctips:)
+
+`ctips://ホスト名:ポート/` を指定すると TLS で接続します(`IO::Socket::SSL` が必要)。
+SNI を送り、サーバー証明書とホスト名を既定で検証します。自己署名や独自の認証局の
+証明書は、環境変数 `SSL_CERT_FILE` に証明書ファイルを指定するなどして信頼させてください。
+接続に失敗すると理由を `warn` で出し、`get_session` は undef を返します。
+
+試験用に検証を省くには `insecure => 1` を渡します(2.1.5 以降。本番では使わないでください)。
+
+```perl
+my $session = CTI::DriverManager::get_session('ctips://localhost:8094/',
+    user => 'user', password => 'kappa', insecure => 1);
+```
+
+Copper PDF 3.2 のサーバー自身の TLS 待受(`copperd.properties` の `jp.cssj.cssjd.tls.port`)と、
+TLS を終端する中継の先にあるサーバーの両方で確認しています。
 
 ## API概要
 
@@ -155,6 +172,15 @@ http://www.apache.org/licenses/LICENSE-2.0
 本ライセンスでの権利と制限を規定した文言については、本ライセンスを参照してください。
 
 ## 変更履歴
+
+### v2.1.5 (2026/9/20)
+- `ctips:` で TLS の接続に失敗したとき(証明書の検証に落ちたときなど)、理由を `warn` で
+  出すようにしました。従来は `IO::Socket::SSL->new` の戻り値を見ずに進み、後から
+  「Can't call method ... on an undefined value」で落ちるだけでした。`get_session` の
+  戻り値が undef になる契約は変わりません。
+- 試験用に証明書の検証を省くオプション `insecure => 1` を追加しました(本番では
+  使わないでください)。他言語版の Java `--insecure`、.NET `?insecure=1`、
+  Node.js `rejectUnauthorized: false`、Ruby `'insecure' => true` に相当します。
 
 ### v2.1.4 (2026/3/9)
 

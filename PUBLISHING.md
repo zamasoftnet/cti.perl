@@ -5,8 +5,8 @@
 `Makefile.PL` の `VERSION` を更新し、バージョンタグを push します。
 
 ```bash
-git tag v2.1.4
-git push origin v2.1.4
+git tag v2.1.5
+git push origin v2.1.5
 ```
 
 GitHub Actions が以下を自動実行します：
