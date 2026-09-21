@@ -1,0 +1,631 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a>
+    <ul>
+      <li><a href="#">&aelig;&brvbar;&sbquo;&egrave;&brvbar;&#xFFFD;</a></li>
+      <li><a href="#1">&auml;&frac12;&oelig;&egrave;&euro;&hellip;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session">CTI::Session</a>
+    <ul>
+      <li><a href="#2">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-get_server_info">CTI::Session-&gt;get_server_info</a>
+    <ul>
+      <li><a href="#3">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#4">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_results">CTI::Session-&gt;set_results</a>
+    <ul>
+      <li><a href="#5">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_output_as_handle">CTI::Session-&gt;set_output_as_handle</a>
+    <ul>
+      <li><a href="#6">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_output_as_file">CTI::Session-&gt;set_output_as_file</a>
+    <ul>
+      <li><a href="#7">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_output_as_directory">CTI::Session-&gt;set_output_as_directory</a>
+    <ul>
+      <li><a href="#8">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_message_func">CTI::Session-&gt;set_message_func</a>
+    <ul>
+      <li><a href="#9">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_progress_func">CTI::Session-&gt;set_progress_func</a>
+    <ul>
+      <li><a href="#10">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_resolver_func">CTI::Session-&gt;set_resolver_func</a>
+    <ul>
+      <li><a href="#11">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-set_continuous">CTI::Session-&gt;set_continuous</a>
+    <ul>
+      <li><a href="#12">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-property">CTI::Session-&gt;property</a>
+    <ul>
+      <li><a href="#13">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#14">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-transcode">CTI::Session-&gt;transcode</a>
+    <ul>
+      <li><a href="#15">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#16">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-start_resource">CTI::Session-&gt;start_resource</a>
+    <ul>
+      <li><a href="#17">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#18">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-end_resource">CTI::Session-&gt;end_resource</a>
+    <ul>
+      <li><a href="#19">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#20">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-start_main">CTI::Session-&gt;start_main</a>
+    <ul>
+      <li><a href="#21">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#22">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-end_main">CTI::Session-&gt;end_main</a>
+    <ul>
+      <li><a href="#23">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#24">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-abort">CTI::Session-&gt;abort</a>
+    <ul>
+      <li><a href="#25">&aring;&frac14;&bull;&aelig;&bull;&deg;</a></li>
+      <li><a href="#26">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-reset">CTI::Session-&gt;reset</a>
+    <ul>
+      <li><a href="#27">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-join">CTI::Session-&gt;join</a>
+    <ul>
+      <li><a href="#28">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#CTI::Session-close">CTI::Session-&gt;close</a>
+    <ul>
+      <li><a href="#29">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</a></li>
+    </ul>
+  </li>
+  <li><a href="#POD-ERRORS">POD ERRORS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CTI::Session - &atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;</p>
+
+<h2 id="">&aelig;&brvbar;&sbquo;&egrave;&brvbar;&#xFFFD;</h2>
+
+<p>&aelig;&ndash;&Dagger;&aelig;&rsaquo;&cedil;&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&atilde;&sbquo;&rsquo;&aring;&reg;&Yuml;&egrave;&iexcl;&OElig;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&#xFFFD;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="1">&auml;&frac12;&oelig;&egrave;&euro;&hellip;</h2>
+
+<p>$Date: 2011-01-20 20:01:03 +0900 (2011&aring;&sup1;&acute;01&aelig;&oelig;&circ;20&aelig;&mdash;&yen; (&aelig;&oelig;&uml;)) $ MIYABE Tatsuhiko</p>
+
+<h1 id="CTI::Session">CTI::Session</h1>
+
+<p><code>new CTI::Session IOHANDLE HOST PORT [OPTIONS]</code></p>
+
+<p>&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&sup3;&atilde;&fnof;&sup3;&atilde;&sbquo;&sup1;&atilde;&fnof;&circ;&atilde;&fnof;&copy;&atilde;&sbquo;&macr;&atilde;&sbquo;&iquest;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&#xFFFD;&reg;&auml;&frac12;&oelig;&aelig;&circ;&#xFFFD;&atilde;&#xFFFD;&macr;&eacute;&euro;&scaron;&aring;&cedil;&cedil;CTI::Driver::create_session&atilde;&#xFFFD;&sect;&egrave;&iexcl;&OElig;&atilde;&#xFFFD;&dagger;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&#xFFFD;&atilde;&euro;&#xFFFD; &atilde;&fnof;&brvbar;&atilde;&fnof;&frac14;&atilde;&sbquo;&para;&atilde;&fnof;&frac14;&atilde;&#xFFFD;&OElig;&atilde;&sbquo;&sup3;&atilde;&fnof;&sup3;&atilde;&sbquo;&sup1;&atilde;&fnof;&circ;&atilde;&fnof;&copy;&atilde;&sbquo;&macr;&atilde;&sbquo;&iquest;&atilde;&sbquo;&rsquo;&ccedil;&rsaquo;&acute;&aelig;&#x17D;&yen;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&trade;&aring;&iquest;&hellip;&egrave;&brvbar;&#xFFFD;&atilde;&#xFFFD;&macr;&atilde;&#xFFFD;&sbquo;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&rsaquo;&atilde;&sbquo;&ldquo;&atilde;&euro;&sbquo;</p>
+
+<h2 id="2">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="IOHANDLE">IOHANDLE</dt>
+<dd>
+
+<pre><code>&aring;&hellip;&yen;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&sbquo;&sup1;&atilde;&fnof;&circ;&atilde;&fnof;&ordf;&atilde;&fnof;&frac14;&atilde;&fnof;&nbsp;(&eacute;&euro;&scaron;&aring;&cedil;&cedil;&atilde;&#xFFFD;&macr;&atilde;&sbquo;&frac12;&atilde;&sbquo;&plusmn;&atilde;&fnof;&fnof;&atilde;&fnof;&circ;)</code></pre>
+
+</dd>
+<dt id="OPTIONS">OPTIONS</dt>
+<dd>
+
+<pre><code>&aelig;&#x17D;&yen;&ccedil;&para;&scaron;&atilde;&sbquo;&ordf;&atilde;&fnof;&mdash;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-get_server_info">CTI::Session-&gt;get_server_info</h1>
+
+<p><code>get_server_info URI</code></p>
+
+<p>&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&aelig;&fnof;&hellip;&aring; &plusmn;&atilde;&sbquo;&rsquo;&egrave;&iquest;&rdquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>&egrave;&copy;&sup3;&ccedil;&acute;&deg;&atilde;&#xFFFD;&macr;&auml;&raquo;&yen;&auml;&cedil;&lsaquo;&atilde;&sbquo;&rsquo;&atilde;&#xFFFD;&rdquo;&egrave;&brvbar;&sect;&auml;&cedil;&lsaquo;&atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo;</p>
+
+<p><a href="http://sourceforge.jp/projects/copper/wiki/CTIP2.0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%83%85%E5%A0%B1">http://sourceforge.jp/projects/copper/wiki/CTIP2.0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E6%83%85%E5%A0%B1</a></p>
+
+<h2 id="3">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="URI">URI</dt>
+<dd>
+
+<pre><code>&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&aelig;&fnof;&hellip;&aring;&nbsp;&plusmn;&atilde;&#xFFFD;&reg;URI</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="4">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&aelig;&fnof;&hellip;&aring; &plusmn;&atilde;&#xFFFD;&reg;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-set_results">CTI::Session-&gt;set_results</h1>
+
+<p><code>set_results RESULTS</code></p>
+
+<p>&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&#xFFFD;&reg;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&sbquo;&rsquo;&aelig;&OElig;&Dagger;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>transcode&atilde;&#xFFFD;&Scaron;&atilde;&sbquo;&circ;&atilde;&#xFFFD;&sup3;start_main&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo; &atilde;&#xFFFD;&ldquo;&atilde;&#xFFFD;&reg;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&sbquo;&rsquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&ordf;&atilde;&#xFFFD;&bdquo;&aring; &acute;&aring;&#xFFFD;&circ;&atilde;&euro;&#xFFFD;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&#xFFFD;&macr;CTI::Results::SingleResult-&gt;new(CTI::Builder::StreamBuilder-&gt;new(*STDOUT)&atilde;&#xFFFD;&laquo;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="5">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="RESULTS">RESULTS</dt>
+<dd>
+
+<pre><code>&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ; Results&atilde;&euro;&sbquo;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-set_output_as_handle">CTI::Session-&gt;set_output_as_handle</h1>
+
+<p><code>set_output_as_handle OUTPUTHANDLE</code></p>
+
+<p>&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&#xFFFD;&reg;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&sbquo;&rsquo;&aelig;&OElig;&Dagger;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>set_results&atilde;&#xFFFD;&reg;&ccedil;&deg;&iexcl;&aelig;&tilde;&ldquo;&ccedil;&permil;&circ;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&#xFFFD;&ldquo;&atilde;&#xFFFD;&iexcl;&atilde;&sbquo;&permil;&atilde;&#xFFFD;&macr;&atilde;&euro;&#xFFFD;&iuml;&frac14;&lsquo;&atilde;&#xFFFD;&curren;&atilde;&#xFFFD; &atilde;&#xFFFD;&lsquo;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&sbquo;&rsquo;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&sbquo;&rsquo;&ccedil;&rsaquo;&acute;&aelig;&#x17D;&yen;&egrave;&uml;&shy;&aring;&reg;&scaron;&aring;&Dagger;&ordm;&aelig;&#xFFFD;&yen;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="6">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="OUTPUTHANDLE">OUTPUTHANDLE</dt>
+<dd>
+
+<pre><code>&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&euro;&sbquo;</code></pre>
+
+</dd>
+<dt id="HEADER">HEADER</dt>
+<dd>
+
+<pre><code>1&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;Content-Type, Content-Length&atilde;&fnof;&tilde;&atilde;&fnof;&fnof;&atilde;&fnof;&euro;&atilde;&sbquo;&rsquo;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&euro;&sbquo;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-set_output_as_file">CTI::Session-&gt;set_output_as_file</h1>
+
+<p><code></code>set_output_as_file FILENAME&gt;</p>
+
+<p>&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&#xFFFD;&reg;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&aring;&#xFFFD;&#xFFFD;&atilde;&sbquo;&rsquo;&aelig;&OElig;&Dagger;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>set_results&atilde;&#xFFFD;&reg;&ccedil;&deg;&iexcl;&aelig;&tilde;&ldquo;&ccedil;&permil;&circ;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&#xFFFD;&ldquo;&atilde;&#xFFFD;&iexcl;&atilde;&sbquo;&permil;&atilde;&#xFFFD;&macr;&atilde;&euro;&#xFFFD;&iuml;&frac14;&lsquo;&atilde;&#xFFFD;&curren;&atilde;&#xFFFD; &atilde;&#xFFFD;&lsquo;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&sbquo;&rsquo;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&aring;&#xFFFD;&#xFFFD;&atilde;&sbquo;&rsquo;&ccedil;&rsaquo;&acute;&aelig;&#x17D;&yen;&egrave;&uml;&shy;&aring;&reg;&scaron;&aring;&Dagger;&ordm;&aelig;&#xFFFD;&yen;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="7">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FILENAME">FILENAME</dt>
+<dd>
+
+<pre><code>&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&aring;&#xFFFD;&#xFFFD;&atilde;&euro;&sbquo;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-set_output_as_directory">CTI::Session-&gt;set_output_as_directory</h1>
+
+<p><code>set_output_as_directory DIRNAME PREFIX SUFFIX</code></p>
+
+<p>&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&#xFFFD;&reg;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&fnof;&Dagger;&atilde;&sbquo;&pound;&atilde;&fnof;&not;&atilde;&sbquo;&macr;&atilde;&fnof;&circ;&atilde;&fnof;&ordf;&aring;&#xFFFD;&#xFFFD;&atilde;&sbquo;&rsquo;&aelig;&OElig;&Dagger;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>set_results&atilde;&#xFFFD;&reg;&ccedil;&deg;&iexcl;&aelig;&tilde;&ldquo;&ccedil;&permil;&circ;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&#xFFFD;&ldquo;&atilde;&#xFFFD;&iexcl;&atilde;&sbquo;&permil;&atilde;&#xFFFD;&macr;&atilde;&euro;&#xFFFD;&egrave;&curren;&Dagger;&aelig;&bull;&deg;&atilde;&#xFFFD;&reg;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&sbquo;&rsquo;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&Dagger;&atilde;&sbquo;&pound;&atilde;&fnof;&not;&atilde;&sbquo;&macr;&atilde;&fnof;&circ;&atilde;&fnof;&ordf;&aring;&#xFFFD;&#xFFFD;&atilde;&sbquo;&rsquo;&ccedil;&rsaquo;&acute;&aelig;&#x17D;&yen;&egrave;&uml;&shy;&aring;&reg;&scaron;&aring;&Dagger;&ordm;&aelig;&#xFFFD;&yen;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&aring;&#xFFFD;&#xFFFD;&atilde;&#xFFFD;&macr; PREFIX &atilde;&fnof;&scaron;&atilde;&fnof;&frac14;&atilde;&sbquo;&cedil;&ccedil;&bull;&ordf;&aring;&#xFFFD;&middot; SUFFIX &atilde;&sbquo;&rsquo;&atilde;&#xFFFD;&curren;&atilde;&#xFFFD;&ordf;&atilde;&#xFFFD;&rsquo;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&sbquo;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="8">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="DIRNAME">DIRNAME</dt>
+<dd>
+
+<pre><code>&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&fnof;&Dagger;&atilde;&sbquo;&pound;&atilde;&fnof;&not;&atilde;&sbquo;&macr;&atilde;&fnof;&circ;&atilde;&fnof;&ordf;&aring;&#xFFFD;&#xFFFD;&atilde;&euro;&sbquo;</code></pre>
+
+</dd>
+<dt id="PREFIX">PREFIX</dt>
+<dd>
+
+<pre><code>&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&reg;&aring;&#xFFFD;&#xFFFD;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&auml;&raquo;&tilde;&atilde;&#xFFFD;&lsquo;&atilde;&sbquo;&lsaquo;&aelig;&ndash;&Dagger;&aring;&shy;&mdash;&aring;&circ;&mdash;&atilde;&euro;&sbquo;</code></pre>
+
+</dd>
+<dt id="SUFFIX">SUFFIX</dt>
+<dd>
+
+<pre><code>&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&reg;&aring;&#xFFFD;&#xFFFD;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&reg;&aring;&frac34;&OElig;&atilde;&#xFFFD;&laquo;&auml;&raquo;&tilde;&atilde;&#xFFFD;&lsquo;&atilde;&sbquo;&lsaquo;&aelig;&ndash;&Dagger;&aring;&shy;&mdash;&aring;&circ;&mdash;&atilde;&euro;&sbquo;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-set_message_func">CTI::Session-&gt;set_message_func</h1>
+
+<p><code>set_message_func FUNCTION</code></p>
+
+<p>&atilde;&fnof;&iexcl;&atilde;&fnof;&fnof;&atilde;&sbquo;&raquo;&atilde;&fnof;&frac14;&atilde;&sbquo;&cedil;&aring;&#xFFFD;&mdash;&auml;&iquest;&iexcl;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&#xFFFD;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>transcode&atilde;&#xFFFD;&Scaron;&atilde;&sbquo;&circ;&atilde;&#xFFFD;&sup3;start_main&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo; &atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&reg;&aring;&frac14;&bull;&aelig;&bull;&deg;&atilde;&#xFFFD;&macr;&atilde;&euro;&#xFFFD;&atilde;&fnof;&iexcl;&atilde;&fnof;&fnof;&atilde;&sbquo;&raquo;&atilde;&fnof;&frac14;&atilde;&sbquo;&cedil;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&permil;(int)&atilde;&euro;&#xFFFD;&atilde;&fnof;&iexcl;&atilde;&fnof;&fnof;&atilde;&sbquo;&raquo;&atilde;&fnof;&frac14;&atilde;&sbquo;&cedil;(string)&atilde;&euro;&#xFFFD;&aring;&frac14;&bull;&aelig;&bull;&deg;(array)&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="9">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FUNCTION">FUNCTION</dt>
+<dd>
+
+<pre><code>&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-set_progress_func">CTI::Session-&gt;set_progress_func</h1>
+
+<p><code>set_progress_func FUNCTION</code></p>
+
+<p>&eacute;&euro;&sup2;&egrave;&iexcl;&OElig;&ccedil;&Scaron;&para;&aelig;&sup3;&#xFFFD;&aring;&#xFFFD;&mdash;&auml;&iquest;&iexcl;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&#xFFFD;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>transcode&atilde;&#xFFFD;&Scaron;&atilde;&sbquo;&circ;&atilde;&#xFFFD;&sup3;start_main&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo; &atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&reg;&aring;&frac14;&bull;&aelig;&bull;&deg;&atilde;&#xFFFD;&macr;&atilde;&euro;&#xFFFD;&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&aring;&permil;&#xFFFD;&aelig;&ndash;&Dagger;&aelig;&rsaquo;&cedil;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&micro;&atilde;&sbquo;&curren;&atilde;&sbquo;&ordm;(integer)&atilde;&euro;&#xFFFD;&egrave;&ordf;&shy;&atilde;&#xFFFD;&iquest;&egrave;&frac34;&frac14;&atilde;&#xFFFD;&iquest;&aelig;&cedil;&circ;&atilde;&#xFFFD;&iquest;&atilde;&fnof;&#xFFFD;&atilde;&sbquo;&curren;&atilde;&fnof;&circ;&aelig;&bull;&deg;(integer)&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="10">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FUNCTION1">FUNCTION</dt>
+<dd>
+
+<pre><code>&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-set_resolver_func">CTI::Session-&gt;set_resolver_func</h1>
+
+<p><code>set_resolver_func FUNCTION</code></p>
+
+<p>&atilde;&fnof;&ordf;&atilde;&sbquo;&frac12;&atilde;&fnof;&frac14;&atilde;&sbquo;&sup1;&egrave;&sect;&pound;&aelig;&plusmn;&ordm;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&#xFFFD;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>transcode&atilde;&#xFFFD;&Scaron;&atilde;&sbquo;&circ;&atilde;&#xFFFD;&sup3;start_main&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo; &atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&reg;&aring;&frac14;&bull;&aelig;&bull;&deg;&atilde;&#xFFFD;&macr;&atilde;&euro;&#xFFFD;URI(string)&atilde;&#xFFFD;&uml;&atilde;&euro;&#xFFFD;&atilde;&fnof;&ordf;&atilde;&sbquo;&frac12;&atilde;&fnof;&frac14;&atilde;&sbquo;&sup1;&atilde;&sbquo;&rsquo;&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&atilde;&#xFFFD;&laquo;&eacute;&euro;&#xFFFD;&atilde;&sbquo;&lsaquo;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&#xFFFD;&atilde;&#xFFFD;&reg;&atilde;&euro;&#xFFFD;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&permil;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&lsaquo;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;(function)&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>&atilde;&#xFFFD;&bull;&atilde;&sbquo;&permil;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&lsaquo;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&macr;URI(string)&atilde;&#xFFFD;&uml;OPTIONS(hash)&atilde;&sbquo;&rsquo;&aring;&frac14;&bull;&aelig;&bull;&deg;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&mdash;&atilde;&euro;&#xFFFD;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&aring;&hellip;&circ;&atilde;&#xFFFD;&reg;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&sbquo;&rsquo;&egrave;&iquest;&rdquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="11">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FUNCTION2">FUNCTION</dt>
+<dd>
+
+<pre><code>&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&fnof;&atilde;&sbquo;&macr;&eacute;&ndash;&cent;&aelig;&bull;&deg;</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-set_continuous">CTI::Session-&gt;set_continuous</h1>
+
+<p><code>set_continuous MODE</code></p>
+
+<p>&egrave;&curren;&Dagger;&aelig;&bull;&deg;&atilde;&#xFFFD;&reg;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&sbquo;&rsquo;&ccedil;&micro;&#xFFFD;&aring;&#xFFFD;&circ;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&cent;&atilde;&fnof;&frac14;&atilde;&fnof;&permil;&atilde;&sbquo;&rsquo;&aring;&circ;&Dagger;&atilde;&sbquo;&Scaron;&aelig;&rsaquo;&iquest;&atilde;&#xFFFD;&circ;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&fnof;&cent;&atilde;&fnof;&frac14;&atilde;&fnof;&permil;&atilde;&#xFFFD;&OElig;&aelig;&oelig;&permil;&aring;&Scaron;&sup1;&atilde;&#xFFFD;&ordf;&aring; &acute;&aring;&#xFFFD;&circ;&atilde;&euro;&#xFFFD;join()&atilde;&#xFFFD;&reg;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&sect;&egrave;&curren;&Dagger;&aelig;&bull;&deg;&atilde;&#xFFFD;&reg;&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&sbquo;&rsquo;&ccedil;&micro;&#xFFFD;&aring;&#xFFFD;&circ;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&egrave;&iquest;&rdquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>transcode&atilde;&#xFFFD;&Scaron;&atilde;&sbquo;&circ;&atilde;&#xFFFD;&sup3;start_main&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo;</p>
+
+<h2 id="12">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="MODE">MODE</dt>
+<dd>
+
+<pre><code>&aelig;&oelig;&permil;&aring;&Scaron;&sup1;&atilde;&#xFFFD;&laquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&#xFFFD;&laquo;&atilde;&#xFFFD;&macr;TRUE</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="CTI::Session-property">CTI::Session-&gt;property</h1>
+
+<p><code>property NAME VALUE</code></p>
+
+<p>&atilde;&fnof;&mdash;&atilde;&fnof;&shy;&atilde;&fnof;&lsquo;&atilde;&fnof;&dagger;&atilde;&sbquo;&pound;&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&sbquo;&rsquo;&auml;&frac12;&oelig;&aelig;&circ;&#xFFFD;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&Yuml;&ccedil;&rsaquo;&acute;&aring;&frac34;&OElig;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo; &aring;&circ;&copy;&ccedil;&rdquo;&uml;&aring;&#xFFFD;&macr;&egrave;&fnof;&frac12;&atilde;&#xFFFD;&ordf;&atilde;&fnof;&mdash;&atilde;&fnof;&shy;&atilde;&fnof;&lsquo;&atilde;&fnof;&dagger;&atilde;&sbquo;&pound;&atilde;&#xFFFD;&reg;&auml;&cedil;&euro;&egrave;&brvbar;&sect;&atilde;&#xFFFD;&macr;&atilde;&euro;&OElig;&eacute;&ndash;&lsaquo;&ccedil;&trade;&ordm;&egrave;&euro;&hellip;&atilde;&sbquo;&not;&atilde;&sbquo;&curren;&atilde;&fnof;&permil;&atilde;&euro;&#xFFFD;&atilde;&sbquo;&rsquo;&aring;&#xFFFD;&sbquo;&ccedil;&hellip;&sect;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo;</p>
+
+<h2 id="13">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="NAME1">NAME</dt>
+<dd>
+
+<pre><code>&aring;&#xFFFD;&#xFFFD;&aring;&permil;&#xFFFD;</code></pre>
+
+</dd>
+<dt id="VALUE">VALUE</dt>
+<dd>
+
+<pre><code>&aring;&euro;&curren;</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="14">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-transcode">CTI::Session-&gt;transcode</h1>
+
+<p><code>transcode URI</code></p>
+
+<p>&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&aring;&#xFFFD;&acute;&aelig;&ndash;&Dagger;&aelig;&rsaquo;&cedil;&atilde;&sbquo;&rsquo;&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>&atilde;&#xFFFD;&ldquo;&atilde;&#xFFFD;&reg;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&macr;1&atilde;&#xFFFD;&curren;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&#xFFFD;&laquo;&atilde;&#xFFFD;&curren;&atilde;&#xFFFD;&#xFFFD;1&aring;&ordm;&brvbar;&atilde;&#xFFFD; &atilde;&#xFFFD;&lsquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&para;&atilde;&#xFFFD;&ldquo;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&OElig;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="15">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="URI1">URI</dt>
+<dd>
+
+<pre><code>&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&aring;&macr;&frac34;&egrave;&plusmn;&iexcl;&atilde;&#xFFFD;&reg;URI</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="16">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-start_resource">CTI::Session-&gt;start_resource</h1>
+
+<p><code>start_resource FILEHANDLE URI [OPTIONS]</code></p>
+
+<p>&atilde;&sbquo;&macr;&atilde;&fnof;&copy;&atilde;&sbquo;&curren;&atilde;&sbquo;&cent;&atilde;&fnof;&sup3;&atilde;&fnof;&circ;&aring;&#xFFFD;&acute;&atilde;&fnof;&ordf;&atilde;&sbquo;&frac12;&atilde;&fnof;&frac14;&atilde;&sbquo;&sup1;&atilde;&#xFFFD;&reg;&eacute;&euro;&#xFFFD;&auml;&iquest;&iexcl;&atilde;&sbquo;&rsquo;&eacute;&ndash;&lsaquo;&aring;&sect;&lsaquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>start_resource,end_resource&atilde;&#xFFFD;&macr;&aring;&macr;&frac34;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&#xFFFD;&ldquo;&atilde;&sbquo;&OElig;&atilde;&sbquo;&permil;&atilde;&#xFFFD;&reg;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&macr;format_main&atilde;&#xFFFD;&Scaron;&atilde;&sbquo;&circ;&atilde;&#xFFFD;&sup3;start_main&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo;</p>
+
+<p>&aelig;&OElig;&Dagger;&aring;&reg;&scaron;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&Yuml;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&laquo;&aelig;&rsaquo;&cedil;&atilde;&#xFFFD;&#xFFFD;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&Yuml;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&#xFFFD;&OElig;&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&atilde;&#xFFFD;&laquo;&eacute;&euro;&#xFFFD;&atilde;&sbquo;&permil;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&macr;&aelig;&ndash;&deg;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&#xFFFD;&auml;&frac12;&oelig;&aelig;&circ;&#xFFFD;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&sbquo;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&sect;&atilde;&sbquo;&sbquo;&atilde;&euro;&#xFFFD;&aelig;&mdash;&cent;&aring;&shy;&tilde;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&sbquo;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&sect;&atilde;&sbquo;&sbquo;&aelig;&sect;&lsaquo;&atilde;&#xFFFD;&bdquo;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&rsaquo;&atilde;&sbquo;&ldquo;&atilde;&euro;&sbquo; &auml;&frac34;&lsaquo;&atilde;&#xFFFD;&circ;&atilde;&#xFFFD;&deg;&atilde;&euro;&#xFFFD;STDOUT&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&deg;&atilde;&euro;&#xFFFD;&aelig;&uml;&trade;&aelig;&ordm;&ndash;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&laquo;&aelig;&rsaquo;&cedil;&atilde;&#xFFFD;&#xFFFD;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&Yuml;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&#xFFFD;&OElig;&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&atilde;&#xFFFD;&laquo;&eacute;&euro;&#xFFFD;&atilde;&sbquo;&permil;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; end_resource&atilde;&sbquo;&rsquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&trade;&atilde;&#xFFFD;&uml;&atilde;&euro;&#xFFFD;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&reg;&ccedil;&Scaron;&para;&aelig;&hellip;&lsaquo;&atilde;&#xFFFD;&macr;&aring;&hellip;&fnof;&atilde;&#xFFFD;&laquo;&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>IGNORE_HEADER&atilde;&#xFFFD;&laquo;1&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&#xFFFD;&uml;&atilde;&euro;&#xFFFD;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&sbquo;&lsaquo;&aring;&dagger;&hellip;&aring;&reg;&sup1;&atilde;&#xFFFD;&reg;&atilde;&fnof;&tilde;&atilde;&fnof;&fnof;&atilde;&fnof;&euro;&eacute;&fnof;&uml;&aring;&circ;&dagger;&atilde;&sbquo;&rsquo;&ccedil;&bdquo;&iexcl;&egrave;&brvbar;&ndash;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&#xFFFD;&reg;&aring;&hellip;&circ;&eacute; &shy;&atilde;&#xFFFD;&lsaquo;&atilde;&sbquo;&permil;&atilde;&euro;&#xFFFD;&ccedil;&copy;&ordm;&egrave;&iexcl;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&reg;&eacute;&ndash;&ldquo;&atilde;&#xFFFD;&OElig;&atilde;&fnof;&tilde;&atilde;&fnof;&fnof;&atilde;&fnof;&euro;&atilde;&#xFFFD;&uml;&egrave;&ordf;&#xFFFD;&egrave;&shy;&tilde;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="17">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FILEHANDLE">FILEHANDLE</dt>
+<dd>
+
+<pre><code>&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;</code></pre>
+
+</dd>
+<dt id="URI2">URI</dt>
+<dd>
+
+<pre><code>&atilde;&fnof;&ordf;&atilde;&sbquo;&frac12;&atilde;&fnof;&frac14;&atilde;&sbquo;&sup1;&atilde;&#xFFFD;&reg;&auml;&raquo;&reg;&aelig;&fnof;&sup3;URI</code></pre>
+
+</dd>
+<dt id="OPTIONS1">OPTIONS</dt>
+<dd>
+
+<pre><code>&atilde;&sbquo;&ordf;&atilde;&fnof;&mdash;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3; mime_type =&gt; &#39;MIME&aring;&#x17E;&lsaquo;&#39;, encoding =&gt; &#39;&atilde;&sbquo;&shy;&atilde;&fnof;&pound;&atilde;&fnof;&copy;&atilde;&sbquo;&macr;&atilde;&sbquo;&iquest;&atilde;&fnof;&raquo;&atilde;&sbquo;&uml;&atilde;&fnof;&sup3;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&Dagger;&atilde;&sbquo;&pound;&atilde;&sbquo;&curren;&atilde;&fnof;&sup3;&atilde;&sbquo;&deg;&#39;, length =&gt; &auml;&ordm;&circ;&aelig;&cedil;&not;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&sbquo;&micro;&atilde;&sbquo;&curren;&atilde;&sbquo;&ordm;&iuml;&frac14;&circ;&atilde;&fnof;&#xFFFD;&atilde;&sbquo;&curren;&atilde;&fnof;&circ;&iuml;&frac14;&permil;, ignore_headers =&gt; &atilde;&fnof;&tilde;&atilde;&fnof;&fnof;&atilde;&fnof;&euro;&atilde;&sbquo;&rsquo;&eacute;&trade;&curren;&aring;&#x17D;&raquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&aring;&nbsp;&acute;&aring;&#xFFFD;&circ;&atilde;&#xFFFD;&macr;1</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="18">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-end_resource">CTI::Session-&gt;end_resource</h1>
+
+<p><code>end_resource FILEHANDLE</code></p>
+
+<p>&atilde;&fnof;&ordf;&atilde;&sbquo;&frac12;&atilde;&fnof;&frac14;&atilde;&sbquo;&sup1;&atilde;&#xFFFD;&reg;&eacute;&euro;&#xFFFD;&auml;&iquest;&iexcl;&atilde;&sbquo;&rsquo;&ccedil;&micro;&sbquo;&auml;&ordm;&dagger;&atilde;&#xFFFD;&mdash;&atilde;&euro;&#xFFFD;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&reg;&ccedil;&Scaron;&para;&aelig;&hellip;&lsaquo;&atilde;&sbquo;&rsquo;&aring;&frac34;&copy;&aring;&cedil;&deg;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>start_resource,end_resource&atilde;&#xFFFD;&macr;&aring;&macr;&frac34;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&#xFFFD;&ldquo;&atilde;&sbquo;&OElig;&atilde;&sbquo;&permil;&atilde;&#xFFFD;&reg;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&macr;format_main&atilde;&#xFFFD;&Scaron;&atilde;&sbquo;&circ;&atilde;&#xFFFD;&sup3;start_main&atilde;&#xFFFD;&reg;&aring;&permil;&#xFFFD;&atilde;&#xFFFD;&laquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD; &atilde;&#xFFFD;&bull;&atilde;&#xFFFD;&bdquo;&atilde;&euro;&sbquo;</p>
+
+<h2 id="19">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FILEHANDLE1">FILEHANDLE</dt>
+<dd>
+
+<pre><code>&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="20">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-start_main">CTI::Session-&gt;start_main</h1>
+
+<p><code>start_main FILEHANDLE URI [OPTIONS]</code></p>
+
+<p>&atilde;&sbquo;&macr;&atilde;&fnof;&copy;&atilde;&sbquo;&curren;&atilde;&sbquo;&cent;&atilde;&fnof;&sup3;&atilde;&fnof;&circ;&aring;&#xFFFD;&acute;&atilde;&#xFFFD;&reg;&aelig;&oelig;&not;&auml;&frac12;&ldquo;&atilde;&#xFFFD;&reg;&eacute;&euro;&#xFFFD;&auml;&iquest;&iexcl;&atilde;&sbquo;&rsquo;&eacute;&ndash;&lsaquo;&aring;&sect;&lsaquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>start_main,end_main&atilde;&#xFFFD;&macr;&aring;&macr;&frac34;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &aelig;&oelig;&not;&auml;&frac12;&ldquo;&atilde;&#xFFFD;&reg;&eacute;&euro;&#xFFFD;&auml;&iquest;&iexcl;&atilde;&#xFFFD;&macr;1&atilde;&#xFFFD;&curren;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&#xFFFD;&laquo;&atilde;&#xFFFD;&curren;&atilde;&#xFFFD;&#xFFFD;1&aring;&ordm;&brvbar;&atilde;&#xFFFD; &atilde;&#xFFFD;&lsquo;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>&aelig;&OElig;&Dagger;&aring;&reg;&scaron;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&Yuml;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&laquo;&aelig;&rsaquo;&cedil;&atilde;&#xFFFD;&#xFFFD;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&Yuml;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&#xFFFD;&OElig;&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&atilde;&#xFFFD;&laquo;&eacute;&euro;&#xFFFD;&atilde;&sbquo;&permil;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&macr;&aelig;&ndash;&deg;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&#xFFFD;&auml;&frac12;&oelig;&aelig;&circ;&#xFFFD;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&sbquo;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&sect;&atilde;&sbquo;&sbquo;&atilde;&euro;&#xFFFD;&aelig;&mdash;&cent;&aring;&shy;&tilde;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&sbquo;&atilde;&#xFFFD;&reg;&atilde;&#xFFFD;&sect;&atilde;&sbquo;&sbquo;&aelig;&sect;&lsaquo;&atilde;&#xFFFD;&bdquo;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&rsaquo;&atilde;&sbquo;&ldquo;&atilde;&euro;&sbquo; &auml;&frac34;&lsaquo;&atilde;&#xFFFD;&circ;&atilde;&#xFFFD;&deg;&atilde;&euro;&#xFFFD;STDOUT&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&deg;&atilde;&euro;&#xFFFD;&aelig;&uml;&trade;&aelig;&ordm;&ndash;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&laquo;&aelig;&rsaquo;&cedil;&atilde;&#xFFFD;&#xFFFD;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&Yuml;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&#xFFFD;&OElig;&atilde;&sbquo;&micro;&atilde;&fnof;&frac14;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&frac14;&atilde;&#xFFFD;&laquo;&eacute;&euro;&#xFFFD;&atilde;&sbquo;&permil;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; end_main&atilde;&sbquo;&rsquo;&aring;&lsquo;&frac14;&atilde;&#xFFFD;&sup3;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&trade;&atilde;&#xFFFD;&uml;&atilde;&euro;&#xFFFD;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&reg;&ccedil;&Scaron;&para;&aelig;&hellip;&lsaquo;&atilde;&#xFFFD;&macr;&aring;&hellip;&fnof;&atilde;&#xFFFD;&laquo;&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>IGNORE_HEADER&atilde;&#xFFFD;&laquo;1&atilde;&sbquo;&rsquo;&egrave;&uml;&shy;&aring;&reg;&scaron;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&#xFFFD;&uml;&atilde;&euro;&#xFFFD;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&sbquo;&lsaquo;&aring;&dagger;&hellip;&aring;&reg;&sup1;&atilde;&#xFFFD;&reg;&atilde;&fnof;&tilde;&atilde;&fnof;&fnof;&atilde;&fnof;&euro;&eacute;&fnof;&uml;&aring;&circ;&dagger;&atilde;&sbquo;&rsquo;&ccedil;&bdquo;&iexcl;&egrave;&brvbar;&ndash;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&#xFFFD;&reg;&aring;&hellip;&circ;&eacute; &shy;&atilde;&#xFFFD;&lsaquo;&atilde;&sbquo;&permil;&atilde;&euro;&#xFFFD;&ccedil;&copy;&ordm;&egrave;&iexcl;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&reg;&eacute;&ndash;&ldquo;&atilde;&#xFFFD;&OElig;&atilde;&fnof;&tilde;&atilde;&fnof;&fnof;&atilde;&fnof;&euro;&atilde;&#xFFFD;&uml;&egrave;&ordf;&#xFFFD;&egrave;&shy;&tilde;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="21">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FILEHANDLE2">FILEHANDLE</dt>
+<dd>
+
+<pre><code>&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;</code></pre>
+
+</dd>
+<dt id="URI3">URI</dt>
+<dd>
+
+<pre><code>&atilde;&fnof;&ordf;&atilde;&sbquo;&frac12;&atilde;&fnof;&frac14;&atilde;&sbquo;&sup1;&atilde;&#xFFFD;&reg;&auml;&raquo;&reg;&aelig;&fnof;&sup3;URI</code></pre>
+
+</dd>
+<dt id="OPTIONS2">OPTIONS</dt>
+<dd>
+
+<pre><code>&atilde;&sbquo;&ordf;&atilde;&fnof;&mdash;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3; mime_type =&gt; &#39;MIME&aring;&#x17E;&lsaquo;&#39;, encoding =&gt; &#39;&atilde;&sbquo;&shy;&atilde;&fnof;&pound;&atilde;&fnof;&copy;&atilde;&sbquo;&macr;&atilde;&sbquo;&iquest;&atilde;&fnof;&raquo;&atilde;&sbquo;&uml;&atilde;&fnof;&sup3;&atilde;&sbquo;&sup3;&atilde;&fnof;&frac14;&atilde;&fnof;&Dagger;&atilde;&sbquo;&pound;&atilde;&sbquo;&curren;&atilde;&fnof;&sup3;&atilde;&sbquo;&deg;&#39;, length =&gt; &auml;&ordm;&circ;&aelig;&cedil;&not;&atilde;&#xFFFD;&bull;&atilde;&sbquo;&OElig;&atilde;&sbquo;&lsaquo;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&sbquo;&micro;&atilde;&sbquo;&curren;&atilde;&sbquo;&ordm;&iuml;&frac14;&circ;&atilde;&fnof;&#xFFFD;&atilde;&sbquo;&curren;&atilde;&fnof;&circ;&iuml;&frac14;&permil;, ignore_headers =&gt; &atilde;&fnof;&tilde;&atilde;&fnof;&fnof;&atilde;&fnof;&euro;&atilde;&sbquo;&rsquo;&eacute;&trade;&curren;&aring;&#x17D;&raquo;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&aring;&nbsp;&acute;&aring;&#xFFFD;&circ;&atilde;&#xFFFD;&macr;1</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="22">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-end_main">CTI::Session-&gt;end_main</h1>
+
+<p><code>end_main FILEHANDLE</code></p>
+
+<p>&aelig;&oelig;&not;&auml;&frac12;&ldquo;&atilde;&#xFFFD;&reg;&eacute;&euro;&#xFFFD;&auml;&iquest;&iexcl;&atilde;&sbquo;&rsquo;&ccedil;&micro;&sbquo;&auml;&ordm;&dagger;&atilde;&#xFFFD;&mdash;&atilde;&euro;&#xFFFD;&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;&atilde;&#xFFFD;&reg;&ccedil;&Scaron;&para;&aelig;&hellip;&lsaquo;&atilde;&sbquo;&rsquo;&aring;&frac34;&copy;&aring;&cedil;&deg;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>start_main,end_main&atilde;&#xFFFD;&macr;&aring;&macr;&frac34;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&Scaron;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo; &aelig;&oelig;&not;&auml;&frac12;&ldquo;&atilde;&#xFFFD;&reg;&eacute;&euro;&#xFFFD;&auml;&iquest;&iexcl;&atilde;&#xFFFD;&macr;1&atilde;&#xFFFD;&curren;&atilde;&#xFFFD;&reg;&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&#xFFFD;&laquo;&atilde;&#xFFFD;&curren;&atilde;&#xFFFD;&#xFFFD;1&aring;&ordm;&brvbar;&atilde;&#xFFFD; &atilde;&#xFFFD;&lsquo;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="23">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="FILEHANDLE3">FILEHANDLE</dt>
+<dd>
+
+<pre><code>&atilde;&fnof;&bull;&atilde;&sbquo;&iexcl;&atilde;&sbquo;&curren;&atilde;&fnof;&laquo;&atilde;&fnof;&#xFFFD;&atilde;&fnof;&sup3;&atilde;&fnof;&permil;&atilde;&fnof;&laquo;</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="24">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-abort">CTI::Session-&gt;abort</h1>
+
+<p><code>abort MODE</code></p>
+
+<p>&aring;&curren;&permil;&aelig;&#xFFFD;&rsaquo;&aring;&Dagger;&brvbar;&ccedil;&#xFFFD;&dagger;&atilde;&#xFFFD;&reg;&auml;&cedil;&shy;&aelig;&ndash;&shy;&atilde;&sbquo;&rsquo;&egrave;&brvbar;&#xFFFD;&aelig;&plusmn;&sbquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="25">&aring;&frac14;&bull;&aelig;&bull;&deg;</h2>
+
+<dl>
+
+<dt id="MODE1">MODE</dt>
+<dd>
+
+<pre><code>&auml;&cedil;&shy;&aelig;&ndash;&shy;&atilde;&fnof;&cent;&atilde;&fnof;&frac14;&atilde;&fnof;&permil; 0=&ccedil;&rdquo;&Yuml;&aelig;&circ;&#xFFFD;&aelig;&cedil;&circ;&atilde;&#xFFFD;&iquest;&atilde;&#xFFFD;&reg;&atilde;&fnof;&Dagger;&atilde;&fnof;&frac14;&atilde;&sbquo;&iquest;&atilde;&sbquo;&rsquo;&aring;&Dagger;&ordm;&aring;&Scaron;&rsaquo;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&brvbar;&auml;&cedil;&shy;&aelig;&ndash;&shy;, 1=&aring;&#xFFFD;&sup3;&aelig;&trade;&sbquo;&auml;&cedil;&shy;&aelig;&ndash;&shy;</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="26">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-reset">CTI::Session-&gt;reset</h1>
+
+<p><code>reset</code></p>
+
+<p>&aring;&hellip;&uml;&atilde;&#xFFFD;&brvbar;&atilde;&#xFFFD;&reg;&ccedil;&Scaron;&para;&aelig;&hellip;&lsaquo;&atilde;&sbquo;&rsquo;&atilde;&fnof;&ordf;&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&fnof;&circ;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="27">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-join">CTI::Session-&gt;join</h1>
+
+<p><code>join</code></p>
+
+<p>&ccedil;&micro;&#xFFFD;&aelig;&#x17E;&oelig;&atilde;&sbquo;&rsquo;&ccedil;&micro;&#xFFFD;&aring;&#xFFFD;&circ;&atilde;&#xFFFD;&mdash;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<h2 id="28">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="CTI::Session-close">CTI::Session-&gt;close</h1>
+
+<p><code>close</code></p>
+
+<p>&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&sbquo;&rsquo;&eacute;&ndash;&permil;&atilde;&#xFFFD;&tilde;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&trade;&atilde;&euro;&sbquo;</p>
+
+<p>&atilde;&#xFFFD;&ldquo;&atilde;&#xFFFD;&reg;&eacute;&ndash;&cent;&aelig;&bull;&deg;&atilde;&#xFFFD;&reg;&aring;&lsquo;&frac14;&aring;&Dagger;&ordm;&atilde;&#xFFFD;&mdash;&aring;&frac34;&OElig;&atilde;&euro;&#xFFFD;&aring;&macr;&frac34;&egrave;&plusmn;&iexcl;&atilde;&#xFFFD;&uml;&atilde;&#xFFFD;&ordf;&atilde;&#xFFFD;&pound;&atilde;&#xFFFD;&Yuml;&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&atilde;&#xFFFD;&laquo;&aring;&macr;&frac34;&atilde;&#xFFFD;&trade;&atilde;&sbquo;&lsaquo;&atilde;&#xFFFD;&bdquo;&atilde;&#xFFFD;&lsaquo;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&lsaquo;&aelig;&ldquo;&#xFFFD;&auml;&frac12;&oelig;&atilde;&sbquo;&sbquo;&atilde;&#xFFFD;&sect;&atilde;&#xFFFD;&#xFFFD;&atilde;&#xFFFD;&frac34;&atilde;&#xFFFD;&rsaquo;&atilde;&sbquo;&ldquo;&atilde;&euro;&sbquo;</p>
+
+<h2 id="29">&aelig;&circ;&raquo;&atilde;&sbquo;&Scaron;&aring;&euro;&curren;</h2>
+
+<p><b>&aelig;&circ;&#xFFFD;&aring;&Scaron;&Yuml;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;1,&aring;&curren;&plusmn;&aelig;&bull;&mdash;&atilde;&#xFFFD;&ordf;&atilde;&sbquo;&permil;undef</b></p>
+
+<h1 id="POD-ERRORS">POD ERRORS</h1>
+
+<p>Hey! <b>The above document had some coding errors, which are explained below:</b></p>
+
+<dl>
+
+<dt id="Around-line-3">Around line 3:</dt>
+<dd>
+
+<p>Non-ASCII character seen before =encoding in &#39;&atilde;&sbquo;&raquo;&atilde;&fnof;&fnof;&atilde;&sbquo;&middot;&atilde;&fnof;&sect;&atilde;&fnof;&sup3;&#39;. Assuming CP1252</p>
+
+</dd>
+</dl>
+
+
+</body>
+
+</html>
+
+

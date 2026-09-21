@@ -1,0 +1,254 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a>
+    <ul>
+      <li><a href="#">&#x6982;&#x8981;</a></li>
+    </ul>
+  </li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a>
+    <ul>
+      <li><a href="#OPTIONS">OPTIONS</a></li>
+      <li><a href="#1">&#x4F5C;&#x8005;</a></li>
+    </ul>
+  </li>
+  <li><a href="#get_driver">get_driver</a>
+    <ul>
+      <li><a href="#2">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</a></li>
+      <li><a href="#3">&#x623B;&#x308A;&#x5024;</a></li>
+    </ul>
+  </li>
+  <li><a href="#get_session">get_session</a>
+    <ul>
+      <li><a href="#4">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</a></li>
+      <li><a href="#5">&#x623B;&#x308A;&#x5024;</a></li>
+    </ul>
+  </li>
+  <li><a href="#POD-ERRORS">POD ERRORS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>CTI::DriverManager - CTI &#x30C9;&#x30E9;&#x30A4;&#x30D0;</p>
+
+<h2 id="">&#x6982;&#x8981;</h2>
+
+<p>&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x5909;&#x63DB;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x63A5;&#x7D9A;&#x3057;&#x3066;&#x3001;&#x5404;&#x7A2E;&#x64CD;&#x4F5C;&#x3092;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> use CTI::DriverManager;
+ 
+ # &#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;
+ $uri = &#39;ctip://localhost:8099/&#39;;
+ $session = CTI::DriverManager::get_session($uri,
+         user =&gt; &#39;user&#39;, password =&gt; &#39;kappa&#39;);
+ $driver = CTI::DriverManager::get_driver($session);
+ $session = $driver-&gt;get_session($uri,
+         user =&gt; &#39;user&#39;, password =&gt; &#39;kappa&#39;);
+
+ # &#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;
+ $session-&gt;set_message_func(sub {
+         my ($code, $message, @args) = @_;
+         printf &quot;%X %s: %s\n&quot;, $code, $message, join(&quot;,&quot;, @args);
+ });
+
+ # &#x9032;&#x884C;&#x72B6;&#x6CC1;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;
+ $session-&gt;set_progress_func(sub {
+         my ($length, $read) = @_;
+         print &quot;[$read / $length]\n&quot;;
+ });
+
+ # &#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x60C5;&#x5831;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;
+ print $session-&gt;get_server_info(&#39;http://www.cssj.jp/ns/ctip/version&#39;);
+
+ # &#x51FA;&#x529B;&#x5148;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;
+ $session-&gt;set_output_as_stream(*STDOUT);
+ $session-&gt;set_output_as_file(&quot;out.pdf&quot;);
+ $session-&gt;set_output_as_directory(&quot;out&quot;, &quot;&quot;, &quot;.png&quot;);
+ 
+ # &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;
+ $session-&gt;property(&#39;input.include&#39;, &#39;**&#39;);
+ 
+ # &#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x5074;&#x3067;&#x6587;&#x66F8;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x5909;&#x63DB;&#x3059;&#x308B;
+ $session-&gt;transcode(&#39;http://www.yahoo.co.jp/&#39;);
+
+ # &#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x5074;&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x9001;&#x308B;
+ $session-&gt;start_resource(*STDOUT, &#39;test.css&#39;, mime_type =&gt; &#39;text/css&#39;);
+ open(my $fp, &#39;&lt;test.css&#39;);
+ while (&lt;$fp&gt;) {print};
+ close($fp);
+ $session-&gt;end_resource(*STDOUT);
+
+ # &#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306E;&#x8981;&#x6C42;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x5074;&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x9001;&#x308B;
+ $session-&gt;set_resolver_func(sub {
+         my ($uri, $open) = @_;
+         if (-e $uri) {
+             my $fp = $open-&gt;();
+             open(my $rfp, &quot;&lt;$uri&quot;);
+             while (&lt;$rfp&gt;) {print $fp $_};
+             close($rfp);
+         }
+         return undef;
+ });
+
+ # &#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x5074;&#x306E;&#x6587;&#x66F8;&#x3092;&#x9001;&#x3063;&#x3066;&#x5909;&#x63DB;&#x3059;&#x308B;
+ $session-&gt;start_main(*STDOUT, &#39;main.html&#39;, mime_type =&gt; &#39;text/html&#39;);
+ open(my $fp, &#39;&lt;main.html&#39;);
+ while (&lt;$fp&gt;) {print};
+ close($fp);
+ $session-&gt;end_main(*STDOUT);
+ 
+ # &#x521D;&#x671F;&#x72B6;&#x614B;&#x306B;&#x623B;&#x3059;
+ $session-&gt;reset();
+ 
+ # &#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x9589;&#x3058;&#x308B;
+ $session-&gt;close();</code></pre>
+
+<h2 id="OPTIONS">OPTIONS</h2>
+
+<p>get_session &#x306B;&#x6E21;&#x3059;&#x3053;&#x3068;&#x304C;&#x51FA;&#x6765;&#x308B;&#x3001;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x6B21;&#x306E;&#x3068;&#x304A;&#x308A;&#x3067;&#x3059;&#x3002;</p>
+
+<dl>
+
+<dt id="user">user</dt>
+<dd>
+
+<pre><code>&#x30E6;&#x30FC;&#x30B6;&#x30FC;ID&#x3002;</code></pre>
+
+</dd>
+<dt id="password">password</dt>
+<dd>
+
+<pre><code>&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3002;</code></pre>
+
+</dd>
+</dl>
+
+<p>start_main, start_resource &#x304A;&#x3088;&#x3073;&#x3001; set_resolver_func &#x306E;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x306B;&#x6E21;&#x3055;&#x308C;&#x308B;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x306B;&#x6E21;&#x3059;&#x3053;&#x3068;&#x304C;&#x51FA;&#x6765;&#x308B;&#x3001;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x6B21;&#x306E;&#x3068;&#x304A;&#x308A;&#x3067;&#x3059;&#x3002; &#x5168;&#x3066;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x7701;&#x7565;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+
+<dl>
+
+<dt id="mime_type">mime_type</dt>
+<dd>
+
+<pre><code> &#x30C7;&#x30FC;&#x30BF;&#x306E;MIME-TYPE&#x3002;
+ </code></pre>
+
+<p>&#x7701;&#x7565;&#x3057;&#x305F;&#x5834;&#x5408;&#x306F;&#x3001;&#x81EA;&#x52D5;&#x5224;&#x5225;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+
+</dd>
+<dt id="encoding">encoding</dt>
+<dd>
+
+<pre><code> &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x30AD;&#x30E3;&#x30E9;&#x30AF;&#x30BF;&#x30FB;&#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3002;
+ </code></pre>
+
+<p>&#x7701;&#x7565;&#x3057;&#x305F;&#x5834;&#x5408;&#x306F;&#x3001;&#x81EA;&#x52D5;&#x5224;&#x5225;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002; &#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x5834;&#x5408;&#x306F;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x3082;&#x7121;&#x8996;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+
+</dd>
+<dt id="length">length</dt>
+<dd>
+
+<pre><code>&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x4E88;&#x60F3;&#x3055;&#x308C;&#x308B;&#x30D0;&#x30A4;&#x30C8;&#x6570;&#x3002;</code></pre>
+
+<p>&#x57FA;&#x672C;&#x7684;&#x306B;&#x7701;&#x7565;&#x3057;&#x3066;&#x69CB;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+
+<p>&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304A;&#x304F;&#x3068;&#x3001;&#x82E5;&#x5E72;&#x306E;&#x51E6;&#x7406;&#x901F;&#x5EA6;&#x306E;&#x5411;&#x4E0A;&#x304C;&#x671F;&#x5F85;&#x3067;&#x304D;&#x308B;&#x3053;&#x3068;&#x3068;&#x3001; &#x30E1;&#x30A4;&#x30F3;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x5834;&#x5408;&#x306F;&#x3001;set_progress_func &#x3067;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x95A2;&#x6570;&#x306B;&#x5143;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x9577;&#x3055;&#x304C;&#x6E21;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+
+</dd>
+<dt id="ignore_header">ignore_header</dt>
+<dd>
+
+<pre><code>1&#x3060;&#x3068;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x304B;&#x3089;CGI&#x306E;&#x51FA;&#x529B;&#x7B49;&#x306E;&#x30D8;&#x30C3;&#x30C0;&#xFF08;&#x5148;&#x982D;&#x304B;&#x3089;&#x7A7A;&#x884C;&#x307E;&#x3067;&#x306E;&#x9593;&#xFF09;&#x3092;&#x9664;&#x53BB;&#x3059;&#x308B;&#x3002;</code></pre>
+
+<p>&#x3053;&#x308C;&#x306F;&#x65E2;&#x5B58;&#x306E;CGI&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x51FA;&#x529B;&#x3092;&#x30AD;&#x30E3;&#x30D7;&#x30C1;&#x30E3;&#x3057;&#x3066;&#x5909;&#x63DB;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x6709;&#x52B9;&#x3067;&#x3059;&#x3002; &#x7701;&#x7565;&#x3057;&#x305F;&#x5834;&#x5408;&#x306F;&#x3001;&#x5168;&#x3066;&#x306E;&#x5185;&#x5BB9;&#x304C;&#x5165;&#x529B;&#x30C7;&#x30FC;&#x30BF;&#x3068;&#x3057;&#x3066;&#x6271;&#x308F;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+
+</dd>
+</dl>
+
+<h2 id="1">&#x4F5C;&#x8005;</h2>
+
+<p>$Date: 2010-12-22 12:57:45 +0900 (2010&#x5E74;12&#x6708;22&#x65E5; (&#x6C34;)) $ MIYABE Tatsuhiko</p>
+
+<h1 id="get_driver">get_driver</h1>
+
+<p><code>get_driver URI</code></p>
+
+<p>&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;URI&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30C9;&#x30E9;&#x30A4;&#x30D0;&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+
+<h2 id="2">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</h2>
+
+<dl>
+
+<dt id="URI">URI</dt>
+<dd>
+
+<pre><code>&#x63A5;&#x7D9A;&#x5148;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="3">&#x623B;&#x308A;&#x5024;</h2>
+
+<p><b>CTI::Driver</b></p>
+
+<h1 id="get_session">get_session</h1>
+
+<p><code>get_session URI [OPTIONS]</code></p>
+
+<p>&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;URI&#x306B;&#x63A5;&#x7D9A;&#x3057;&#x3001;&#x30BB;&#x30C3;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+
+<h2 id="4">&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</h2>
+
+<dl>
+
+<dt id="URI1">URI</dt>
+<dd>
+
+<pre><code>&#x63A5;&#x7D9A;&#x5148;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</code></pre>
+
+</dd>
+<dt id="OPTIONS1">OPTIONS</dt>
+<dd>
+
+<pre><code>&#x63A5;&#x7D9A;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3; user =&gt; &#39;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x540D;&#39;, password =&gt; &#39;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#39;</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="5">&#x623B;&#x308A;&#x5024;</h2>
+
+<p><b>CTI::Session</b></p>
+
+<h1 id="POD-ERRORS">POD ERRORS</h1>
+
+<p>Hey! <b>The above document had some coding errors, which are explained below:</b></p>
+
+<dl>
+
+<dt id="Around-line-3">Around line 3:</dt>
+<dd>
+
+<p>Non-ASCII character seen before =encoding in &#39;&#x30C9;&#x30E9;&#x30A4;&#x30D0;&#39;. Assuming UTF-8</p>
+
+</dd>
+</dl>
+
+
+</body>
+
+</html>
+
+
